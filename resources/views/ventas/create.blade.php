@@ -70,7 +70,11 @@
                                 {{-- Precio de venta --}}
                                 <div class="col-md-4 mb-2">
                                     <label for="precio_venta" class="form-label">Precio de venta:</label>
-                                    <input type="number" name="precio_venta" id="precio_venta" class="form-control" step="0.1" disabled>
+                                    <div class='d-flex align-items-center'>
+                                        <p class='fs-5 fw-bold m-0'>S/</p>
+                                        <input type="number" name="precio_venta" id="precio_venta" class="form-control" step="0.1" disabled>
+                                    </div>
+                                    
                                     {{-- @error('precio_venta')
                                         <small class="text-danger">{{'*'.$message}}</small>
                                     @enderror --}}
@@ -124,7 +128,7 @@
                                                 </tr>
                                                 <tr>
                                                     <th></th>
-                                                    <th colspan="4">IVA %</th>
+                                                    <th colspan="4">IGV %</th>
                                                     <th colspan="2"><span id="iva">0</span></th>
                                                 </tr>
                                                 <tr>
@@ -192,7 +196,7 @@
 
                                 {{-- Impuesto --}}
                                 <div class="col-md-6 mb-2">
-                                    <label for="impuesto" class="form-label">Impuesto:</label>
+                                    <label for="impuesto" class="form-label">IGV:</label>
                                     <input type="text" name="impuesto" id="impuesto" class="form-control border-success" readonly>
                                     @error('impuesto')
                                         <small class="text-danger">{{'*'.$message}}</small>
@@ -290,7 +294,7 @@
         let total = 0;
 
         // Constantes
-        const impuesto = 21;
+        const impuesto = 18;
 
         function mostrarValores(){
             let dataProducto = $('#producto_id').val().split('-');
