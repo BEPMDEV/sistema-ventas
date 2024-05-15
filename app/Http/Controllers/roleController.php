@@ -33,7 +33,8 @@ class roleController extends Controller
     public function create()
     {
         $permisos = Permission::all();
-        return view('role.create', compact('permisos'));
+        $permisosModificados = $this->modificarNombresPermisos($permisos);
+        return view('role.create', compact('permisosModificados'));
     }
 
     /**
@@ -86,7 +87,8 @@ class roleController extends Controller
     public function edit(Role $role)
     {
         $permisos = Permission::all();
-        return view('role.edit', compact('role','permisos'));
+        $permisosModificados = $this->modificarNombresPermisos($permisos);
+        return view('role.edit', compact('role', 'permisosModificados'));
     }
 
     /**
@@ -134,5 +136,24 @@ class roleController extends Controller
     {
         Role::where('id', $id)->delete();
         return redirect()->route('roles.index')->with('success', 'Rol eliminado');
+    }
+
+    private function modificarNombresPermisos($permisos)
+    {
+        $permisosModificados = $permisos->map(function ($permiso) {
+            $nombre = $permiso->name;
+
+            // Reemplazar nombres de categorías
+            $nombre = str_replace(['ver-categoria', 'crear-categoria', 'editar-categoria', 'eliminar-categoria'], ['ver-serie', 'crear-serie', 'editar-serie', 'eliminar-serie'], $nombre);
+
+            // Reemplazar nombres de presentaciones
+            $nombre = str_replace(['ver-presentacione', 'crear-presentacione', 'editar-presentacione', 'eliminar-presentacione'], ['ver-modelo', 'crear-modelo', 'editar-modelo', 'eliminar-modelo'], $nombre);
+
+            $permiso->name = $nombre;
+
+            return $permiso;
+        });
+
+        return $permisosModificados;
     }
 }

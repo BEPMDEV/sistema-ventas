@@ -36,10 +36,10 @@
 @endif
 
     <div class="container-fluid px-4">
-        <h1 class="mt-4 text-center">Categorías</h1>
+        <h1 class="mt-4 text-center">Series</h1>
         <ol class="breadcrumb mb-4">
             <li class="breadcrumb-item"><a href="{{ route('panel') }}">Inicio</a></li>
-            <li class="breadcrumb-item active">Categorías</li>
+            <li class="breadcrumb-item active">Series</li>
         </ol>
 
         @can('crear-categoria')
@@ -54,7 +54,7 @@
         <div class="card mb-4">
             <div class="card-header">
                 <i class="fas fa-table me-1"></i>
-                Tabla Categorías
+                Tabla Series
             </div>
             <div class="card-body">
                 <table id="example" class="table table-light table-striped" style="width:100%">
@@ -113,7 +113,7 @@
                                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                     </div>
                                     <div class="modal-body">
-                                        {{ $categoria->caracteristica->estado ==1 ? '¿Seguro deseas eliminar esta categoría?' : '¿Seguro deseas restaurar esta categoría?'}}
+                                        {{ $categoria->caracteristica->estado ==1 ? '¿Seguro deseas eliminar esta serie?' : '¿Seguro deseas restaurar esta serie?'}}
                                     </div>
                                     <div class="modal-footer">
                                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>

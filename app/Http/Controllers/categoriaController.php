@@ -57,7 +57,7 @@ class categoriaController extends Controller
             DB::rollBack();
         }
 
-        return redirect()->route('categorias.index')->with('success', 'Categoría registrada');
+        return redirect()->route('categorias.index')->with('success', 'Serie registrada');
     }
 
     /**
@@ -84,7 +84,7 @@ class categoriaController extends Controller
     {
         Caracteristica::where('id', $categoria->caracteristica->id)->update($request->validated());
 
-        return redirect()->route('categorias.index')->with('success','Categoría actualizada');
+        return redirect()->route('categorias.index')->with('success','Serie actualizada');
     }
 
     /**
@@ -100,13 +100,13 @@ class categoriaController extends Controller
             ->update([
                 'estado' => 0
             ]);
-            $mensaje = 'Categoría eliminada';
+            $mensaje = 'Serie eliminada';
         }else{
             Caracteristica::where('id', $categoria->caracteristica->id)
             ->update([
                 'estado' => 1
             ]);
-            $mensaje = 'Categoría restaurada';
+            $mensaje = 'Serie restaurada';
         }
 
         return redirect()->route('categorias.index')->with('success', $mensaje);

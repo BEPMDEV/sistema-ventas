@@ -37,7 +37,7 @@
                     {{-- Permisos --}}
                     <div class="col-12 mb-4">
                         <label for="" class="form-label">Permisos para el rol:</label>
-                        @foreach ($permisos as $item)
+                        @foreach ($permisosModificados as $item)
                             @if ( in_array($item->id, $role->permissions->pluck('id')->toArray()))
                                 <div class="form-check mb-2">
                                     <input checked type="checkbox" name="permission[]" id="{{$item->id}}" class="form-check-input" value="{{$item->id}}">

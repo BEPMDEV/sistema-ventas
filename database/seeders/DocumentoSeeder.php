@@ -18,13 +18,10 @@ class DocumentoSeeder extends Seeder
                 'tipo_documento' => 'DNI',
             ],
             [
-                'tipo_documento' => 'Pasaporte',
-            ],
-            [
                 'tipo_documento' => 'Cédula',
             ],
             [
-                'tipo_documento' => 'Carnet Extranjero',
+                'tipo_documento' => 'RUC',
             ],
         ]);
     }

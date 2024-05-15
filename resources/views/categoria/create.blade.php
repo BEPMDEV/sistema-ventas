@@ -12,11 +12,11 @@
 
 @section('content')
     <div class="container-fluid px-4">
-        <h1 class="mt-4 text-center">Crear Categoría</h1>
+        <h1 class="mt-4 text-center">Crear Serie</h1>
         <ol class="breadcrumb mb-4">
             <li class="breadcrumb-item"><a href="{{ route('panel') }}">Inicio</a></li>
-            <li class="breadcrumb-item"><a href="{{ route('categorias.index') }}">Categorías</a></li>
-            <li class="breadcrumb-item active">Crear Categoría</li>
+            <li class="breadcrumb-item"><a href="{{ route('categorias.index') }}">Series</a></li>
+            <li class="breadcrumb-item active">Crear Serie</li>
         </ol>
 
         <div class="container w-50 float-start">

@@ -36,10 +36,10 @@
 @endif
 
     <div class="container-fluid px-4">
-        <h1 class="mt-4 text-center">Presentaciones</h1>
+        <h1 class="mt-4 text-center">Modelos</h1>
         <ol class="breadcrumb mb-4">
             <li class="breadcrumb-item"><a href="{{ route('panel') }}">Inicio</a></li>
-            <li class="breadcrumb-item active">Presentaciones</li>
+            <li class="breadcrumb-item active">Modelos</li>
         </ol>
 
         @can('crear-presentacione')
@@ -53,7 +53,7 @@
         <div class="card mb-4">
             <div class="card-header">
                 <i class="fas fa-table me-1"></i>
-                Tabla Presentaciones
+                Tabla Modelos
             </div>
             <div class="card-body">
                 <table id="example" class="table table-light table-striped" style="width:100%">
@@ -112,7 +112,7 @@
                                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                     </div>
                                     <div class="modal-body">
-                                        {{ $presentacion->caracteristica->estado ==1 ? '¿Seguro deseas eliminar esta presentación?' : '¿Seguro deseas restaurar esta presentación?'}}
+                                        {{ $presentacion->caracteristica->estado ==1 ? '¿Seguro deseas eliminar este modelo?' : '¿Seguro deseas restaurar este modelo?'}}
                                     </div>
                                     <div class="modal-footer">
                                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>

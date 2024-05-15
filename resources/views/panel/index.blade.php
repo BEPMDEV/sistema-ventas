@@ -172,7 +172,7 @@
                     <div class="card-body">
                         <div class="row">
                             <div class="col-8">
-                                <i class="fa-solid fa-tag"></i><span class="m-1">Categorías</span>
+                                <i class="fa-solid fa-tag"></i><span class="m-1">Series</span>
                             </div>
                             <div class="col-4">
                                 <?php 
@@ -195,7 +195,7 @@
                     <div class="card-body">
                         <div class="row">
                             <div class="col-8">
-                                <i class="fa-solid fa-folder"></i><span class="m-1">Presentaciones</span>
+                                <i class="fa-solid fa-folder"></i><span class="m-1">Modelos</span>
                             </div>
                             <div class="col-4">
                                 <?php 

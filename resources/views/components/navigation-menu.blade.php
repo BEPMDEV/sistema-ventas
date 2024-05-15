@@ -104,13 +104,13 @@
                 @can('ver-categoria')
                     <a class="nav-link" href="{{ route('categorias.index') }}">
                         <div class="sb-nav-link-icon"><i class="fa-solid fa-tag"></i></div>
-                        Categorías
+                        Series
                     </a>
                 @endcan
                 @can('ver-presentacione')
                     <a class="nav-link" href="{{ route('presentaciones.index') }}">
                         <div class="sb-nav-link-icon"><i class="fa-solid fa-folder"></i></div>
-                        Presentaciones
+                        Modelos
                     </a>
                 @endcan
 

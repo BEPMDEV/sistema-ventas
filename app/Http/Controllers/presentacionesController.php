@@ -57,7 +57,7 @@ class presentacionesController extends Controller
             DB::rollback();
         }
 
-        return redirect()->route('presentaciones.index')->with('success', 'Presentación registrada');
+        return redirect()->route('presentaciones.index')->with('success', 'Modelo registrado');
     }
 
     /**
@@ -85,7 +85,7 @@ class presentacionesController extends Controller
         Caracteristica::where('id', $presentacione->caracteristica->id)
         ->update($request->validated());
 
-        return redirect()->route('presentaciones.index')->with('success', 'Presentación editada');
+        return redirect()->route('presentaciones.index')->with('success', 'Modelo editado');
     }
 
     /**
@@ -101,13 +101,13 @@ class presentacionesController extends Controller
             ->update([
                 'estado' => 0
             ]);
-            $mensaje = 'Presentación eliminada';
+            $mensaje = 'Modelo eliminado';
         }else{
             Caracteristica::where('id', $presentacion->caracteristica->id)
             ->update([
                 'estado' => 1
             ]);
-            $mensaje = 'Presentación restaurada';
+            $mensaje = 'Modelo restaurado';
         }
 
         return redirect()->route('presentaciones.index')->with('success', $mensaje);

@@ -55,7 +55,7 @@ class marcasController extends Controller
             DB::rollBack();
         }
 
-        return redirect()->route('marcas.index')->with('success', 'Categoría registrada');
+        return redirect()->route('marcas.index')->with('success', 'Marca registrada');
     }
 
     /**
