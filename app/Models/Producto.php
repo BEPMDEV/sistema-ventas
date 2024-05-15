@@ -32,12 +32,11 @@ class Producto extends Model
 
     protected $fillable = ['codigo', 'nombre', 'descripcion', 'fecha_vencimiento', 'marca_id', 'presentacione_id', 'img_path'];
 
-    public function hanbleUploadImage($image){
-        $file = $image;
-        $name = time() . $file->getClientOriginalName();
-        // $file->move(public_path().'/img/productos/', $name);
-        Storage::putFileAs('/public/productos/', $file, $name, 'public');
+    public function hanbleUploadImage($image)
+        {
+            $name = time() . '.' . $image->getClientOriginalExtension();
+            $path = $image->storeAs('public/productos', $name);
 
-        return $name;
-    }
+            return str_replace('public/', '', $path);
+        }
 }

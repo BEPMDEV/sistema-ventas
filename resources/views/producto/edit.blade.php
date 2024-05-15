@@ -94,8 +94,8 @@
 
                         {{-- Presentacion --}}
                         <div class="col-12 col-md-6 mb-4">
-                            <label for="presentacione_id" class="form-label">Presentación:</label>
-                            <select title="Seleccione una presentación..." data-live-search="true" data-size="5" name="presentacione_id" id="presentacione_id" class="form-control selectpicker show-tick">
+                            <label for="presentacione_id" class="form-label">Modelo:</label>
+                            <select title="Seleccione un modelo..." data-live-search="true" data-size="5" name="presentacione_id" id="presentacione_id" class="form-control selectpicker show-tick">
                                 @foreach ($presentaciones as $item)
                                     @if ($producto->presentacione_id == $item->id)
                                         <option selected value="{{ $item->id }}" {{ old('presentacione_id') == $item->id? 'selected': '' }}>{{ $item->nombre }}</option>
@@ -111,8 +111,8 @@
 
                         {{-- Categorias --}}
                         <div class="col-12 col-md-6 mb-4">
-                            <label for="categorias" class="form-label">Categorías:</label>
-                            <select title="Seleccione una categoría..." data-live-search="true" data-size="5" name="categorias[]" id="categorias" class="form-control selectpicker show-tick" multiple>
+                            <label for="categorias" class="form-label">Serie:</label>
+                            <select title="Seleccione una serie..." data-live-search="true" data-size="5" name="categorias[]" id="categorias" class="form-control selectpicker show-tick" multiple>
                                 @foreach ($categorias as $item)
                                     @if (in_array($item->id,$producto->categorias->pluck('id')->toArray()))
                                         <option selected value="{{ $item->id }}" {{ (in_array($item->id , old('categorias', []))) ? 'selected' : '' }}>{{ $item->nombre }}</option>

@@ -64,8 +64,8 @@
                             <th>Nombre</th>
                             <th>Descripción</th>
                             <th>Marca</th>
-                            <th>Presentación</th>
-                            <th>Categorías</th>
+                            <th>Modelo</th>
+                            <th>Serie</th>
                             <th>Estado</th>
                             <th>Acciones</th>
                         </tr>
@@ -143,11 +143,11 @@
                                         <div class="row mb-3">
                                             <label><span class="fw-bolder">Imagen: </span></label>
                                             <div>
-                                                @if ($item->img_path != null)
-                                                    <img src="{{ Storage::url('public/productos/'.$item->img_path) }}" alt="{{ $item->nombre}}" class="img-fluid img-thumbnail border-4 rounded">
-                                                @else
-                                                    <img src="" alt="{{ $item->nombre}}" class="">
-                                                @endif
+                                            @if (!empty($item->img_path))
+                                                <img src="{{ asset('storage/productos/'.$item->img_path) }}" alt="{{ $item->nombre}}" class="img-fluid img-thumbnail border-4 rounded">
+                                            @else
+                                                <p>No hay imagen disponible.</p>
+                                            @endif
                                             </div>
                                         </div>
                                     </div>
